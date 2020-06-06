@@ -7,8 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node src/server.js",
     "debug": "nodemon --inspect-brk=50054 --exec babel-node src/server.js",
+    "start": "node dist-server/server.js",
     "webpack": "webpack -wd",
-    "build": "webpack --mode production --config ./webpack.config.js -wd --watch"
+    "heroku-postbuild": "npm install && npm run build && npm run transpile",
+    "build": "webpack --mode production --config ./webpack.config.js",
+    "transpile": "babel ./src --out-dir dist-server"
   },
   "author": "",
   "license": "ISC",

@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-3-webpack-plugin");
 const config = {
   entry: {
-    vendor: ["react"],
     app: ["./src/client.js"],
   },
   output: {

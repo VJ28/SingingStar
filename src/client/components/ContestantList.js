@@ -51,7 +51,7 @@ class ContestantList extends React.Component {
     contestantList: [
       {
         filename:
-          "https://singingstar-songs.s3.ap-south-1.amazonaws.com/vijaymourya-9876543223.mp3",
+          "http://singingstar-songs.s3.ap-south-1.amazonaws.com/vijaymourya-9876543223.mp3",
         city: "NAVI MUMBAI",
         email: "vijaymourya28@gmail.com",
         name: "Vijay Mourya",

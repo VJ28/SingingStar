@@ -2,5 +2,7 @@
 node_modules
 dist
 .vscode
+certificates
 localhost-cert.pem
 localhost-privkey.pem
+dist-server
