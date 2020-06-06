@@ -9,8 +9,7 @@ import fileUpload from "express-fileupload";
 import path from "path";
 import AWS from "aws-sdk";
 if (app.get("env") == "development") {
-  import dotenv from "dotenv";
-  dotenv.config();
+  require("dotenv").config();
 }
 const app = express();
 // require("express-http2-workaround")({
