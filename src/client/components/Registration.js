@@ -7,7 +7,7 @@ let Input = styled.input`
   margin-top
 `;
 let ErrorBox = styled.div`
-  height: 16px;
+  min-height: 16px;
   font-size: 12px;
   color: red;
 `;
@@ -51,11 +51,34 @@ class Registration extends React.Component {
     cityError: "",
   };
 
+  validateFile = (file) => {
+    let pattern = /(.*).(mp3|wav|aiff|acc|ogg)/gi;
+    let audioValidationMsg = !pattern.test(file.name)
+      ? "File format is not correct. Please upload proper audio file format (mp3, wav, aiff, acc, ogg). "
+      : "";
+    let fileSizeInMB = file.size / 1000000;
+    let fileSizeValidationMsg =
+      fileSizeInMB > 6
+        ? " File too large. File size should be less than or equal to 6MB."
+        : "";
+    let errorMsgs = {
+      hasError: !!audioValidationMsg && !!fileSizeValidationMsg,
+      fileError: `${audioValidationMsg}${fileSizeValidationMsg}`,
+    };
+    return errorMsgs;
+  };
+
   onChangeHandler = (event) => {
     const file = event.target.files[0];
-    this.setState({
-      selectedFile: event.target.files[0],
-    });
+    let errorMsgs = this.validateFile(file);
+    if (errorMsgs.hasError) {
+      event.preventDefault();
+      this.setState({ fileError: errorMsgs.fileError });
+    } else {
+      this.setState({
+        selectedFile: file,
+      });
+    }
   };
 
   getFieldValues = () => {
@@ -87,7 +110,7 @@ class Registration extends React.Component {
       ((errorMsgs.cityError = "Please enter your city"), (hasError = true));
     !this.state.selectedFile &&
       ((errorMsgs.fileError =
-        "Please upload file (with proper audio extension i.e. mp3)"),
+        "Please upload file (with proper audio extension i.e. mp3, wav, aiff, acc, ogg and file size <= 6MB)"),
       (hasError = true));
     return { errorMsgs, hasError };
   };
@@ -106,7 +129,7 @@ class Registration extends React.Component {
         data.append("email", email);
         data.append("contact", contact);
         data.append("city", city);
-        fetch(`/upload/?originalFileName=${this.state.selectedFile.name}`, {
+        fetch(`/uploads/?originalFileName=${this.state.selectedFile.name}`, {
           method: "POST",
           cache: "no-cache",
           credentials: "same-origin",
@@ -180,7 +203,7 @@ class Registration extends React.Component {
           <ErrorBox>{!!cityError ? cityError : null}</ErrorBox>
         </InputWrapper>
         <InputWrapper>
-          <Label htmlFor="file">Upload file: &nbsp;</Label>
+          <Label htmlFor="file">Upload Audio file: &nbsp;</Label>
           <div>
             <input
               type="file"
