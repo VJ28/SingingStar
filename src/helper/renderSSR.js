@@ -14,6 +14,7 @@ export function ssrTemplate(req, res) {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta name="description" content="A platform to showcase your singing skills and win a smartphone
           worth ₹15k."/>
+          <link rel="stylesheet" type="text/css" href="/app.css" defer/>
       </head>
       <body><div id="root">`);
 
@@ -31,7 +32,6 @@ export function ssrTemplate(req, res) {
   // and finalize the response with closing HTML
   stream.on("end", () =>
     res.end(`</div>
-    <link rel="stylesheet" type="text/css" href="/app.css" defer/>
     <script src="/vendors.js" async></script>
     <script src="/runtime.js" async ></script>
     <script src="/app.js" charset="utf-8" async></script>
