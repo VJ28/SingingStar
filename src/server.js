@@ -26,8 +26,9 @@ app.use(express.static("dist/public"));
 
 // Setup HTTP/1.x Server
 var httpServer = http.Server(app);
-httpServer.listen(3030, function () {
-  console.log("Express HTTP/1 server started");
+let port = process.env.PORT || 8080;
+httpServer.listen(port, function () {
+  console.log("Express HTTP/1 server started on port: " + port);
 });
 
 // const options = {
