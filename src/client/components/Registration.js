@@ -112,8 +112,10 @@ class Registration extends React.Component {
           if (!response.ok) {
             throw new Error(`${response.status}: ${response.statusText}`);
           }
-          alert(url);
-          return url;
+          alert(
+            "Thank you, your application has been submitted. Best of luck!"
+          );
+          window.location.href = "/";
         });
       };
       reader.readAsBinaryString(this.state.selectedFile);

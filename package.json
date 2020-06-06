@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node src/server.js",
-    "debug": "nodemon --inspect-brk=50054 --exec babel-node src/server.js",
+    "debug": "nodemon --inspect-brk=50055 --exec babel-node src/server.js",
     "start": "node dist-server/server.js",
     "webpack": "webpack -wd",
     "heroku-postbuild": "npm install && npm run build && npm run transpile",

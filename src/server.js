@@ -9,7 +9,7 @@ import fileUpload from "express-fileupload";
 import path from "path";
 import AWS from "aws-sdk";
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
+  require("dotenv").config({ path: "E:/SingingStar/src/.env" });
 }
 const app = express();
 // require("express-http2-workaround")({
@@ -65,15 +65,16 @@ app.post("/upload", (req, res) => {
     .toLowerCase()
     .replace(/ /g, "")}-${contact}${path.extname(originalFileName)}`;
   const params = {
-    Bucket: "singingstar-songs",
+    Bucket: process.env.S3_BUCKET,
     Key: fileName,
     Body: Buffer.from(file, "binary"),
     ACL: "public-read",
   };
   // Uploading files to the bucket
-  s3.upload(params, function (err, data) {
+  s3.upload(params, async function (err, data) {
     if (err) {
       console.log(err);
+      res.status(500).end("Error Occured while uploading file");
     } else {
       console.log(`File uploaded successfully. ${data.Location} ${name}`);
       var docClient = new AWS.DynamoDB.DocumentClient();
@@ -87,13 +88,13 @@ app.post("/upload", (req, res) => {
           filename: data.Location,
         },
       };
-      docClient.put(params, function (err, data) {
-        if (err) {
-          console.error(JSON.stringify(err, null, 2));
-        } else {
-          console.log("PutItem succeeded");
-        }
-      });
+      let result = await docClient.put(params).promise();
+      if (result.$response.error) {
+        res.status(500).end("Error Occured while saving data");
+        console.error(JSON.stringify(err, null, 2));
+      } else {
+        res.status(200).end();
+      }
     }
   });
 });
