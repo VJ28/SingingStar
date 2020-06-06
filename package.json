@@ -10,7 +10,7 @@
     "start": "node dist-server/server.js",
     "webpack": "webpack -wd",
     "heroku-postbuild": "npm install && npm run build && npm run transpile",
-    "build": "webpack --mode production --config ./webpack.config.js -wd --watch",
+    "build": "webpack --mode production --config ./webpack.config.js",
     "transpile": "babel ./src --out-dir dist-server"
   },
   "author": "",

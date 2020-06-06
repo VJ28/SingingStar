@@ -129,7 +129,7 @@ class Registration extends React.Component {
         data.append("email", email);
         data.append("contact", contact);
         data.append("city", city);
-        fetch(`/uploads/?originalFileName=${this.state.selectedFile.name}`, {
+        fetch(`/upload/?originalFileName=${this.state.selectedFile.name}`, {
           method: "POST",
           cache: "no-cache",
           credentials: "same-origin",
