@@ -17,7 +17,7 @@ const app = express();
 //   http2: http2,
 //   app: app,
 // });
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(fileUpload());
 app.use(compression());
@@ -25,9 +25,8 @@ app.use(compression());
 app.use(express.static("dist/public"));
 
 // Setup HTTP/1.x Server
-var httpServer = http.Server(app);
-let port = process.env.PORT || 8080;
-httpServer.listen(port, function () {
+let port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", 511, function () {
   console.log("Express HTTP/1 server started on port: " + port);
 });
 
