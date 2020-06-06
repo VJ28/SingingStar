@@ -8,8 +8,9 @@ export function ssrTemplate(req, res) {
   res.write(`<!DOCTYPE html>
   <html lang="en">
       <head>
-          <title>My First SSR</title>
+          <title>Singing Competition 2020 - Singing Star</title>
           <meta charset="UTF-8">
+          <meta name="google-site-verification" content="D9p34IEJSiyJJtL-QRgVsG-t1zRTtjkF-KS5GRcxDwE" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" type="text/css" href="/app.css" async/>
           <meta name="description" content="A platform to showcase your singing skills and win a smartphone
