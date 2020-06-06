@@ -74,6 +74,7 @@ class Registration extends React.Component {
       emailError: "",
       contactError: "",
       cityError: "",
+      fileError: "",
     };
     !name &&
       ((errorMsgs.nameError = "Please enter your name"), (hasError = true));
@@ -84,6 +85,10 @@ class Registration extends React.Component {
       (hasError = true));
     !city &&
       ((errorMsgs.cityError = "Please enter your city"), (hasError = true));
+    !this.state.selectedFile &&
+      ((errorMsgs.fileError =
+        "Please upload file (with proper audio extension i.e. mp3)"),
+      (hasError = true));
     return { errorMsgs, hasError };
   };
   onClickHandler = () => {
@@ -122,7 +127,13 @@ class Registration extends React.Component {
     }
   };
   render() {
-    let { nameError, emailError, contactError, cityError } = this.state;
+    let {
+      nameError,
+      emailError,
+      contactError,
+      cityError,
+      fileError,
+    } = this.state;
     return (
       <FormWrapper>
         <H3>Please submit your entry here!</H3>
@@ -178,6 +189,7 @@ class Registration extends React.Component {
               onChange={this.onChangeHandler}
             />
           </div>
+          <ErrorBox>{!!fileError ? fileError : null}</ErrorBox>
         </InputWrapper>
         <Submit onClick={this.onClickHandler}>Submit</Submit>
       </FormWrapper>
