@@ -48,23 +48,14 @@ const Label = styled.label`
 `;
 class ContestantList extends React.Component {
   state = {
-    contestantList: [
-      {
-        filename:
-          "http://singingstar-songs.s3.ap-south-1.amazonaws.com/vijaymourya-9876543223.mp3",
-        city: "NAVI MUMBAI",
-        email: "vijaymourya28@gmail.com",
-        name: "Vijay Mourya",
-        contact: 9876543223,
-      },
-    ],
+    contestantList: [],
   };
   componentDidMount() {
-    // fetch("/getAll")
-    //   .then((res) => res.json())
-    //   .then((result) => {
-    //     this.setState({ contestantList: result });
-    //   });
+    fetch("/getAll")
+      .then((res) => res.json())
+      .then((result) => {
+        this.setState({ contestantList: result });
+      });
   }
 
   shortList = (event) => {
