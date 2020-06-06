@@ -8,8 +8,10 @@ import fs from "fs";
 import fileUpload from "express-fileupload";
 import path from "path";
 import AWS from "aws-sdk";
-import dotenv from "dotenv";
-dotenv.config();
+if (app.get("env") == "development") {
+  import dotenv from "dotenv";
+  dotenv.config();
+}
 const app = express();
 // require("express-http2-workaround")({
 //   express: express,
