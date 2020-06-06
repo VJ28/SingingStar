@@ -10,7 +10,7 @@ export function ssrTemplate(req, res) {
       <head>
           <title>Singing Competition 2020 - Singing Star</title>
           <meta charset="UTF-8">
-          <meta name="google-site-verification" content="D9p34IEJSiyJJtL-QRgVsG-t1zRTtjkF-KS5GRcxDwE" />
+          <meta name="google-site-verification" content="oqGRhd80lbrdgjieVf1dksSORVekS4g7mEWkqFh3UoE" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" type="text/css" href="/app.css" async/>
           <meta name="description" content="A platform to showcase your singing skills and win a smartphone
