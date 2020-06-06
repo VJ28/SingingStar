@@ -8,7 +8,7 @@ import fs from "fs";
 import fileUpload from "express-fileupload";
 import path from "path";
 import AWS from "aws-sdk";
-if (app.get("env") == "development") {
+if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 const app = express();
