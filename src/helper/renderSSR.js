@@ -12,7 +12,6 @@ export function ssrTemplate(req, res) {
           <meta charset="UTF-8">
           <meta name="google-site-verification" content="oqGRhd80lbrdgjieVf1dksSORVekS4g7mEWkqFh3UoE" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" type="text/css" href="/app.css" async/>
           <meta name="description" content="A platform to showcase your singing skills and win a smartphone
           worth ₹15k."/>
       </head>
@@ -31,10 +30,12 @@ export function ssrTemplate(req, res) {
 
   // and finalize the response with closing HTML
   stream.on("end", () =>
-    res.end(`</div></body>
-  <script src="/vendors.js" async></script>
-  <script src="/runtime.js" async ></script>
-  <script src="/app.js" charset="utf-8" async></script>
+    res.end(`</div>
+    <link rel="stylesheet" type="text/css" href="/app.css" defer/>
+    <script src="/vendors.js" async></script>
+    <script src="/runtime.js" async ></script>
+    <script src="/app.js" charset="utf-8" async></script>
+    </body>
 </html>`)
   );
 }
