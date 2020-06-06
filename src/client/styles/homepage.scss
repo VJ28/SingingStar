@@ -1,0 +1,74 @@
+.root{
+    height: calc(100%-20px);
+}
+h1{
+    font-family: cursive;
+    font-size: 44px;
+    text-align: center;
+    font-weight: 700;
+    padding: 20px 20px 48px;
+    color: #fff;
+}
+h2{
+    text-align: center;
+    padding: 20px 10px 32px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: cursive, 'sans-serif';
+}
+.description {
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    cursor: default;
+    font-family: Courier, monospace;
+}
+.section--intro{
+    padding: 10px 10px 30px;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+    z-index: 10;
+    background-image: url("../../assets/img/star.jpg");
+    background-size: cover;
+    background-position: right center;
+}
+.section--aboutus{
+    background-image: url("../../assets/img/mic.jpg");
+    background-size: cover;
+    background-position: right center;
+    p{
+        padding-bottom: 20px;
+    }
+}
+.section--submit-entry{
+    height: 225px;
+    background-image: url("../../assets/img/sing.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-position-x: -115%;
+    h2{
+        color: white;
+        position: relative;
+        width: 60%;
+        margin: auto;
+    }
+}
+.section--why-participate{
+    // background-image: url("../../assets/img/just.jpg");
+    // background-size: cover;
+    // background-position: right center;
+    ul{
+        list-style: disc;
+        padding: 0px 20px 20px 40px;
+        li{
+            text-align: left;
+            color: #222;
+        }
+    }
+}
+.height28{
+    height: 28px;
+}
