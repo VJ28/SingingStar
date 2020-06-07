@@ -43,7 +43,12 @@ const config = {
         include: [path.resolve(__dirname, "src/client/styles")],
         use: [
           { loader: MiniCssExtractPlugin.loader },
-          { loader: "css-loader" },
+          {
+            loader: "css-loader",
+            options: {
+              url: true,
+            },
+          },
           { loader: "sass-loader" },
         ],
       },
@@ -52,6 +57,23 @@ const config = {
         use: [
           {
             loader: "url-loader",
+            options: {
+              encoding: false,
+            },
+          },
+        ],
+      },
+      {
+        // images
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+              context: path.resolve(__dirname, "src/assets/"),
+              useRelativePaths: true,
+            },
           },
         ],
       },
