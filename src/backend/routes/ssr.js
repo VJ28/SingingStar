@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-const ssrTemplate = require("../../helper/renderSSR").ssrTemplate;
+const ssrTemplate = require("../helper/renderSSR").ssrTemplate;
 
 router.get("*", async (req, res) => {
   if (req.originalUrl.includes("favicon")) {

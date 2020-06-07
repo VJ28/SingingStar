@@ -1,8 +1,8 @@
 import React from "react";
-import App from "../client/containers/App";
 import { StaticRouter } from "react-router-dom";
 import { renderToNodeStream } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
+import App from "../../client/containers/App";
 
 export function ssrTemplate(req, res) {
   res.write(`<!DOCTYPE html>

@@ -6,6 +6,7 @@
 a{
     text-decoration: none;
 }
+
 .root{
     height: calc(100%-20px);
 }
@@ -39,12 +40,12 @@ h2{
     font-size: 18px;
     position: relative;
     z-index: 10;
-    background-image: url("/img/star.jpg");
+    background-image: url("../../assets/img/star.jpg");
     background-size: cover;
     background-position: right center;
 }
 .section--aboutus{
-    background-image: url("/img/mic.jpg");
+    background-image: url("../../assets/img/mic.jpg");
     background-size: cover;
     background-position: right center;
     p{
@@ -53,7 +54,7 @@ h2{
 }
 .section--submit-entry{
     height: 225px;
-    background-image: url("/img/sing.jpg");
+    background-image: url("../../assets/img/sing.jpg");
     background-size: 100%;
     background-position: center;
     background-position-x: -115%;

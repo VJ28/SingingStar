@@ -58,21 +58,13 @@ const config = {
           {
             loader: "url-loader",
             options: {
-              encoding: false,
-            },
-          },
-        ],
-      },
-      {
-        // images
-        test: /\.(png|jpg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
               name: "[path][name].[ext]",
+              encoding: false,
               context: path.resolve(__dirname, "src/assets/"),
-              useRelativePaths: true,
+              outputPath: "/",
+              publicPath: "/",
+              esModule: false,
+              limit: false,
             },
           },
         ],
