@@ -12,7 +12,7 @@ const config = {
     chunkFilename: "[name].js",
     filename: "[name].js",
   },
-  devtool: "",
+  devtool: "cheap-eval-source-map",
   optimization: {
     runtimeChunk: "single",
     splitChunks: {

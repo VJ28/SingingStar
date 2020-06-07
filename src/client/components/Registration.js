@@ -62,7 +62,7 @@ class Registration extends React.Component {
         ? " File too large. File size should be less than or equal to 6MB."
         : "";
     let errorMsgs = {
-      hasError: !!audioValidationMsg && !!fileSizeValidationMsg,
+      hasError: !!audioValidationMsg || !!fileSizeValidationMsg,
       fileError: `${audioValidationMsg}${fileSizeValidationMsg}`,
     };
     return errorMsgs;
