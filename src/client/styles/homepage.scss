@@ -1,3 +1,11 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
 .root{
     height: calc(100%-20px);
 }
@@ -71,4 +79,19 @@ h2{
 }
 .height28{
     height: 28px;
+}
+.footer{
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: black;
+    color: silver;
+}
+@media screen and (min-width: 768px){
+    .body-container{
+        clear: both;
+    }
 }
