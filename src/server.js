@@ -17,7 +17,7 @@ app.use(compression());
 app.use(express.static("dist/public"));
 
 // Setup HTTP/1.x Server
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 3001;
 app.listen(port, "0.0.0.0", 511, function () {
   console.log("Express HTTP/1 server started on port: " + port);
 });

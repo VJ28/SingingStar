@@ -10,10 +10,14 @@ export function ssrTemplate(req, res) {
       <head>
           <title>Singing Competition 2020 - Singing Star</title>
           <meta charset="UTF-8">
+          <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
           <meta name="google-site-verification" content="oqGRhd80lbrdgjieVf1dksSORVekS4g7mEWkqFh3UoE" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta name="description" content="A platform to showcase your singing skills and win a smartphone
-          worth ₹15k."/>
+          <meta name="title" content="Singing Competition 2020 - Singing Star"/>
+          <meta name="description" content="Singing Star 2020 is a online singing competition to showcase your skills and win a smartphone worth ₹15k. No need to go through the hassle of audition, just record and upload to be part of contest."/>
+          <link rel="canonical" href="https://singing-star.herokuapp.com${req.originalUrl}"/>
+          <link rel="alternate" hreflang="default"  href="https://singing-star.herokuapp.com${req.originalUrl}"/>
+          <link rel="alternate" hreflang="en" href="https://singing-star.herokuapp.com${req.originalUrl}"/>
           <link rel="stylesheet" type="text/css" href="/app.css" defer/>
       </head>
       <body><div id="root">`);
