@@ -49,12 +49,13 @@ const Label = styled.label`
 class ContestantList extends React.Component {
   state = {
     contestantList: [],
+    isFetching: true,
   };
   componentDidMount() {
     fetch("/getAll")
       .then((res) => res.json())
       .then((result) => {
-        this.setState({ contestantList: result });
+        this.setState({ contestantList: result, isFetching: false });
       });
   }
 
@@ -72,9 +73,10 @@ class ContestantList extends React.Component {
             <HeadingBlock>
               {contestant.name}
               <FloatRight>
-                <a onClick={this.shortList} data-contact={contestant.contact}>
+                {/* <a onClick={this.shortList} data-contact={contestant.contact}>
                   ShortList
-                </a>
+                </a> */}
+                {contestant.city}
               </FloatRight>
             </HeadingBlock>
             <InfoBlock key={"contact" + index}>
@@ -84,9 +86,9 @@ class ContestantList extends React.Component {
             <InfoBlock key={"email" + index}>
               <Label>Email:</Label> {contestant.email}
             </InfoBlock>
-            <InfoBlock key={"city" + index}>
+            {/* <InfoBlock key={"city" + index}>
               <Label>City:</Label> {contestant.city}
-            </InfoBlock>
+            </InfoBlock> */}
             <InfoBlock key={"audio" + index}>
               <Audio controls>
                 <source src={contestant.filename} type="audio/mp3" />
@@ -95,6 +97,8 @@ class ContestantList extends React.Component {
           </Li>
         ))}
       </UL>
+    ) : this.state.isFetching ? (
+      "Please wait... Fetching contestant list."
     ) : (
       "No Contestant Found"
     );
