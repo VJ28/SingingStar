@@ -73,6 +73,10 @@ app.post("/upload", (req, res) => {
   });
 });
 
+app.get("/keepAlive", function (req, res) {
+  res.status(200).end();
+});
+
 app.get("/getAll", async function (req, res) {
   var docClient = new AWS.DynamoDB.DocumentClient();
   let items = await docClient.scan({ TableName: "singingstar" }).promise();
