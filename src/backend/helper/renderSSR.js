@@ -8,7 +8,7 @@ export function ssrTemplate(req, res) {
   res.write(`<!DOCTYPE html>
   <html lang="en">
       <head>
-          <title>Singing Competition 2020 - Singing Star</title>
+          <title>Singing Competition 2020 in Mumbai- Singing Star</title>
           <meta charset="UTF-8">
           <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
           <meta name="google-site-verification" content="oqGRhd80lbrdgjieVf1dksSORVekS4g7mEWkqFh3UoE" />
