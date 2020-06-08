@@ -36,7 +36,13 @@ export function ssrTemplate(req, res) {
             "name" : "Online Singing Competition 2020 in Mumbai- Singing Star",
             "startDate" : "2020-06-28",
             "endDate" : "2020-07-28",
-            "superEvent" : "https://singing-star.herokuapp.com/register/"
+            "location" : {
+               "@type" : "Place",
+               "name" : "Online",
+               "address": "https://singing-star.herokuapp.com/register/"
+            },
+            "eventStatus": "Live",
+            "description": "Singing Star 2020 is an online singing competition to showcase your skills and win a smartphone worth ₹15k."
           }
           </script>
       </head>
