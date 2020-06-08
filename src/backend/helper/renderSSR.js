@@ -8,17 +8,37 @@ export function ssrTemplate(req, res) {
   res.write(`<!DOCTYPE html>
   <html lang="en">
       <head>
-          <title>Singing Competition 2020 in Mumbai- Singing Star</title>
+          <title>Online Singing Competition 2020 in Mumbai- Singing Star</title>
           <meta charset="UTF-8">
-          <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+          <link type="image/ico" rel="shortcut icon" href="${req.protocol}://${req.headers.host}/favicon.ico">
           <meta name="google-site-verification" content="oqGRhd80lbrdgjieVf1dksSORVekS4g7mEWkqFh3UoE" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta name="title" content="Singing Competition 2020 - Singing Star"/>
-          <meta name="description" content="Singing Star 2020 is a online singing competition to showcase your skills and win a smartphone worth ₹15k. No need to go through the hassle of audition, just record and upload to be part of contest."/>
+          <meta name="title" content="Online Singing Competition 2020 in Mumbai- Singing Star"/>
+          <meta name="description" content="Singing Star 2020 is an online singing competition to showcase your skills and win a smartphone worth ₹15k."/>
+          <meta itemprop="name" content="Online Singing Competition 2020 in Mumbai- Singing Star">
+          <meta itemprop="description" content="Singing Star 2020 is an online singing competition to showcase your skills and win a smartphone worth ₹15k.">
+          <meta itemprop="image" content="https://singing-star.herokuapp.com/img/star.jpg">
+          <meta property="og:title" content="Online Singing Competition 2020 in Mumbai- Singing Star" />
+          <meta property="og:type" content="event" />
+          <meta property="og:url" content="https://singing-star.herokuapp.com${req.originalUrl}" />
+          <meta property="og:image" content="https://singing-star.herokuapp.com/img/star.jpg" />
+          <meta property="og:description" content="Singing Star 2020 is an online singing competition to showcase your skills and win a smartphone worth ₹15k." />
+          <meta name="twitter:card" content="summary">
           <link rel="canonical" href="https://singing-star.herokuapp.com${req.originalUrl}"/>
           <link rel="alternate" hreflang="default"  href="https://singing-star.herokuapp.com${req.originalUrl}"/>
           <link rel="alternate" hreflang="en" href="https://singing-star.herokuapp.com${req.originalUrl}"/>
           <link rel="stylesheet" type="text/css" href="/app.css" defer/>
+          <script type="application/ld+json">
+          {
+            "@context" : "http://schema.org",
+            "@type": "Event",
+            "@id" : "https://singing-star.herokuapp.com/",
+            "name" : "Online Singing Competition 2020 in Mumbai- Singing Star",
+            "startDate" : "2020-06-28",
+            "endDate" : "2020-07-28",
+            "superEvent" : "https://singing-star.herokuapp.com/register/"
+          }
+          </script>
       </head>
       <body><div id="root">`);
 

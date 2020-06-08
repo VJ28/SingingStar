@@ -83,4 +83,10 @@ app.get("/getAll", async function (req, res) {
   return res.json(items.Items).end();
 });
 
+app.get("/favicon.ico", (req, res) => {
+  res.writeHead(200, { "Content-Type": "image/ico" });
+  res.sendFile(__dirname + "favicon.ico");
+  res.end();
+});
+
 app.use("/", ssr);
