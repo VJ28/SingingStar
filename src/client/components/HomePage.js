@@ -26,7 +26,7 @@ class HomePage extends React.Component {
           </p>
         </section>
         <section className="section--aboutus">
-          <h2>About Competition</h2>
+          <h2>About the Competition</h2>
           <p className="description">
             We are organizing Online Singing Competition for talented singers
             across Mumbai. The platform combines formal judging and popular

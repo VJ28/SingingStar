@@ -43,7 +43,7 @@ export function ssrTemplate(req, res) {
                "name" : "Online",
                "address": "https://singing-star.herokuapp.com/register/"
             },
-            "eventStatus": "Live",
+            "eventStatus": "EventMovedOnline",
             "image": "https://singing-star.herokuapp.com/img/star.jpg",
             "description": "Singing Star 2020 is an online singing competition to showcase your skills and win a smartphone worth ₹15k."
           }
