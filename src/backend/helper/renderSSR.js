@@ -11,7 +11,7 @@ export function ssrTemplate(req, res) {
           <title>Online Singing Competition 2020 in Mumbai - Singing Star </title>
           <meta charset="UTF-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <link type="image/ico" rel="shortcut icon" href="https//${req.headers.host}/favicon.ico">
+          <link type="image/ico" rel="shortcut icon" href="https://${req.headers.host}/favicon.ico">
           <meta name="google-site-verification" content="oqGRhd80lbrdgjieVf1dksSORVekS4g7mEWkqFh3UoE" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta name="keywords" content="singing contest, online singing competition 2020, singing competition in mumbai, singing competition in india, singing contest 2020 in mumbai, register online" />
