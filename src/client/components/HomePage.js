@@ -21,7 +21,7 @@ class HomePage extends React.Component {
         <section className="section--intro">
           <h1>Singing Star 2K2K!</h1>
           <p className="description">
-            A platform to showcase your singing skills and win a smartphone
+            A platform to showcase your singing talent and win a smartphone
             worth ₹15k.
           </p>
         </section>
@@ -29,8 +29,8 @@ class HomePage extends React.Component {
           <h2>About the Competition</h2>
           <p className="description">
             We are organizing Online Singing Competition for talented singers
-            across Mumbai. The platform combines formal judging and popular
-            choice to identify and boost the best talent to stardom.
+            across Mumbai, India. The platform combines formal judging and
+            popular choice to identify and boost the best talent to stardom.
           </p>
         </section>
         <section className="section--why-participate">
@@ -53,7 +53,9 @@ class HomePage extends React.Component {
         </section>
         <section className="section--submit-entry">
           <h2>Submit your entry!</h2>
-          <CustomLink to="/register/">Click here!</CustomLink>
+          <CustomLink to="/register/" title="registration link">
+            Click here!
+          </CustomLink>
         </section>
       </>
     );
