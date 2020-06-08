@@ -27,7 +27,7 @@ export function ssrTemplate(req, res) {
           <meta property="og:description" content="Singing Star 2020 is an online singing competition to showcase your skills and win a smartphone worth ₹15k." />
           <meta name="twitter:card" content="summary">
           <link rel="canonical" href="https://singing-star.herokuapp.com${req.originalUrl}"/>
-          <link rel="alternate" hreflang="default"  href="https://singing-star.herokuapp.com${req.originalUrl}"/>
+          <link rel="alternate" hreflang="x-default"  href="https://singing-star.herokuapp.com${req.originalUrl}"/>
           <link rel="alternate" hreflang="en" href="https://singing-star.herokuapp.com${req.originalUrl}"/>
           <link rel="stylesheet" type="text/css" href="/app.css" defer/>
           <script type="application/ld+json">
