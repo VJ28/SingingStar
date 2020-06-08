@@ -5,4 +5,3 @@ dist
 certificates
 localhost-cert.pem
 localhost-privkey.pem
-dist-server
