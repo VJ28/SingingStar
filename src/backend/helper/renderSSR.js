@@ -74,8 +74,6 @@ export function ssrTemplate(req, res) {
   // and finalize the response with closing HTML
   stream.on("end", () =>
     res.end(`</div>
-    <script src="/vendors.js" async></script>
-    <script src="/runtime.js" async ></script>
     <script src="/app.js" charset="utf-8" async></script>
     </body>
 </html>`)

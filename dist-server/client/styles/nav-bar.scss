@@ -1,0 +1,47 @@
+
+#nav-bar {
+    ul{
+        list-style: none;
+        li{
+            padding: 15px 10px;
+            a{
+                color: wheat;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .body-container{
+        clear: both;
+    }
+    #nav-bar {
+        overflow: auto;
+        background-color: yellowgreen;
+        color: cornsilk;
+        .header-bar{
+            float: left;
+            .app_title{
+                padding: 10px 20px;
+                font-size: 30px;
+            }
+        }
+        ul {
+            float: right;
+            li{
+                display: inline-block;
+                padding-right: 0px;
+                &:after{
+                    content: "|";
+                    margin-left:10px;
+                }
+                &:hover{
+                    font-size: 14px;
+                }
+            }
+        }
+        .nav-btn, .app_title{
+            display: none;
+        }
+    }
+}

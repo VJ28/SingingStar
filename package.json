@@ -11,7 +11,7 @@
     "webpack": "webpack -wd",
     "heroku-postbuild": "npm install && npm run build",
     "build": "webpack --mode production --config ./webpack.config.js",
-    "transpile": "babel ./src --out-dir dist-server"
+    "transpile": "babel ./src --out-dir dist-server --copy-files"
   },
   "author": "",
   "license": "ISC",

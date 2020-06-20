@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-3-webpack-plugin");
 const config = {
   entry: {
-    app: ["./src/client.js"],
+    app: ["./dist-server/client.js"],
   },
   output: {
     path: path.resolve(__dirname, "dist/public/"),
@@ -13,19 +13,19 @@ const config = {
     filename: "[name].js",
   },
   devtool: "",
-  optimization: {
-    runtimeChunk: "single",
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          enforce: true,
-          chunks: "all",
-        },
-      },
-    },
-  },
+  // optimization: {
+  //   runtimeChunk: "single",
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: "vendors",
+  //         enforce: true,
+  //         chunks: "all",
+  //       },
+  //     },
+  //   },
+  // },
   module: {
     rules: [
       {
@@ -40,7 +40,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        include: [path.resolve(__dirname, "src/client/styles")],
+        include: [path.resolve(__dirname, "dist-server/client/styles")],
         use: [
           { loader: MiniCssExtractPlugin.loader },
           {
@@ -60,7 +60,7 @@ const config = {
             options: {
               name: "[path][name].[ext]",
               encoding: false,
-              context: path.resolve(__dirname, "src/assets/"),
+              context: path.resolve(__dirname, "dist-server/assets/"),
               outputPath: "/",
               publicPath: "/",
               esModule: false,
