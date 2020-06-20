@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist-server",
     "dev": "nodemon --exec babel-node src/server.js",
     "debug": "nodemon --inspect-brk=50055 --exec babel-node src/server.js",
     "start": "node dist-server/server.js",
     "webpack": "webpack -wd",
-    "heroku-postbuild": "npm install && npm run build",
+    "heroku-postbuild": "npm install && npm run clean && npm run transpile && npm run build",
     "build": "webpack --mode production --config ./webpack.config.js",
     "transpile": "babel ./src --out-dir dist-server --copy-files"
   },

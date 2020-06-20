@@ -1,6 +1,7 @@
 .env
 node_modules
 dist
+dist-server
 .vscode
 certificates
 localhost-cert.pem
