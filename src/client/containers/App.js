@@ -15,7 +15,7 @@ class App extends React.Component {
         <section className="body-container">
           <AppRoute />
         </section>
-        <section className="footer">&copy; 2019 Made by Vijay Mourya.</section>
+        <section className="footer">&copy; 2020 Made by Vijay Mourya.</section>
       </>
     );
   }

@@ -18,7 +18,7 @@ export function ssrTemplate(req, res) {
           <meta name="title" content="Online Singing Competition 2020 in Mumbai - Singing Star | Singing Contest in India"/>
           <meta name="description" content="Singing Star 2020 is an online singing competition to showcase your talent and win a smartphone worth ₹15k - Online Singing Contest 2020 in Mumbai, India. In times of Covid19 pandemic, stay safe at home and enjoy the leisure of participating online for the contest. Contest is open for all over India."/>
           <meta itemprop="name" content="Online Singing Competition 2020 in Mumbai- Singing Star">
-          <meta itemprop="description" content="Singing Star 2020 is an online singing competition to showcase your talent and win a smartphone worth ₹15k.">
+          <meta itemprop="description" content="Singing Star 2020 is an online singing competition to showcase your talent and win a smartphone worth ₹15k - Online Singing Contest 2020 in Mumbai, India. In times of Covid19 pandemic, stay safe at home and enjoy the leisure of participating online for the contest. Contest is open for all over India.">
           <meta itemprop="image" content="https://singing-star.herokuapp.com/img/star.jpg">
           <meta property="og:title" content="Online Singing Competition 2020 in Mumbai- Singing Star" />
           <meta property="og:type" content="event" />
@@ -36,11 +36,11 @@ export function ssrTemplate(req, res) {
             "@type": "Event",
             "@id" : "https://singing-star.herokuapp.com/",
             "name" : "Online Singing Competition 2020 in Mumbai- Singing Star",
-            "startDate" : "2020-06-28",
+            "startDate" : "2020-06-24",
             "endDate" : "2020-07-28",
             "location" : {
                "@type" : "Place",
-               "name" : "India",
+               "name" : "Mumbai",
                "address": "https://singing-star.herokuapp.com/register/"
             },
             "eventStatus": "EventMovedOnline",
