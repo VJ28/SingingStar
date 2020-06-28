@@ -37,7 +37,7 @@ export function ssrTemplate(req, res) {
             "@id" : "https://singing-star.herokuapp.com/",
             "name" : "Online Singing Competition 2020 in Mumbai- Singing Star",
             "startDate" : "2020-06-24",
-            "endDate" : "2020-07-28",
+            "endDate" : "2020-07-10",
             "location" : {
                "@type" : "Place",
                "name" : "Mumbai",
