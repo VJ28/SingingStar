@@ -48,10 +48,11 @@ h2{
     background-position: right center;
 }
 .section--about-competition{
-    background-image: url("../../assets/img/mic.jpg");
+    background-image: url("../../assets/img/man-mic.jpg");
     background-size: cover;
     background-position: right center;
     p{
+        color: currentColor;
         padding-bottom: 20px;
     }
 }
