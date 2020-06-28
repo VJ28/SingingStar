@@ -3,12 +3,15 @@
     margin: 0px;
     padding: 0px;
 }
+html, body {
+    height: 100%;
+}
 a{
     text-decoration: none;
 }
 
-.root{
-    height: calc(100%-20px);
+#root{
+    padding-bottom: 32px;
 }
 h1{
     font-family: cursive;
@@ -44,7 +47,7 @@ h2{
     background-size: cover;
     background-position: right center;
 }
-.section--aboutus{
+.section--about-competition{
     background-image: url("../../assets/img/mic.jpg");
     background-size: cover;
     background-position: right center;
@@ -66,9 +69,6 @@ h2{
     }
 }
 .section--why-participate{
-    // background-image: url("../../assets/img/just.jpg");
-    // background-size: cover;
-    // background-position: right center;
     ul{
         list-style: disc;
         padding: 0px 20px 20px 40px;
@@ -95,4 +95,26 @@ h2{
     .body-container{
         clear: both;
     }
+}
+.online-comp-img{
+    height: 200px;
+    background-image: url("../../assets/img/OnlineSingingCompetition.jpg");
+    background-size: cover;
+}
+.fm-img{
+    height: 200px;
+    display: flex;
+}
+.girl-img{
+    width:50%;
+    background-image: url("../../assets/img/girl.jpg");
+    background-size: cover;
+}
+.man-img{
+    width:50%;
+    background-image: url("../../assets/img/man.jpg");
+    background-size: cover;
+}
+.section--about-us{
+    background-image: linear-gradient(#2BC9DE, #37B9E9);
 }

@@ -11,6 +11,21 @@ const CustomLink = styled(Link)`
   width: 100px;
 `;
 
+const Contact = styled.div`
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 4px;
+  & > a {
+    cursor: pointer;
+  }
+`;
+
+const Address = styled.div`
+  padding-left: 20px;
+  line-height: 1.51;
+  padding-bottom: 12px;
+`;
+
 class HomePage extends React.Component {
   constructor() {
     super();
@@ -25,7 +40,7 @@ class HomePage extends React.Component {
             worth ₹15k.
           </p>
         </section>
-        <section className="section--aboutus">
+        <section className="section--about-competition">
           <h2>About the Competition</h2>
           <p className="description">
             We are organizing Online Singing Competition for talented singers
@@ -37,6 +52,7 @@ class HomePage extends React.Component {
           <h2>Why participate?</h2>
           <div>
             <ul>
+              <li className="description">No Entry Fee.</li>
               <li className="description">
                 Compete from anywhere online as per your convenience.
               </li>
@@ -57,16 +73,25 @@ class HomePage extends React.Component {
             Click here!
           </CustomLink>
         </section>
+        <section className="section--about-us">
+          <h2>Contact Us</h2>
+          <Address>
+            Sangita Patel,
+            <br />
+            BKC Mumbai, Maharashtra, India
+            <br />
+            Pin: 400051
+            <Contact>
+              &#9742;: <a href="tel:9619063744">9619063744</a>
+            </Contact>
+            <Contact>
+              &#9993;: <a href="javascript:void">risingvoice@singingstar.com</a>
+            </Contact>
+          </Address>
+        </section>
       </>
     );
   }
 }
-
-/*
-var a = document.getElementsByClassName("html--template")[0].textContent.split("").map(obj => {if(obj != " " && obj != "\n") return `<span>${obj}</span>`; else return obj;})
-var p = document.createElement("pre")
-p.innerHTML = a.join("")
-document.getElementsByClassName("html--template")[0].appendChild(p)
-*/
 
 export default HomePage;

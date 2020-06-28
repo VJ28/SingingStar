@@ -86,6 +86,11 @@ class NavBar extends React.Component {
               Enter Contest
             </Link>
           </NavBarLi>
+          <NavBarLi>
+            <Link to="/winners/" onClick={this.handleClick}>
+              Winners
+            </Link>
+          </NavBarLi>
         </NavBarUL>
       </NavBarSection>
     );

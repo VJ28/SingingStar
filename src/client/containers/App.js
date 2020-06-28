@@ -1,13 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import AppRoute from "../routes/index";
-// import style from "../styles/homepage.scss";
-// import styles from "../styles/nav-bar.scss";
 class App extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <>
@@ -15,7 +9,13 @@ class App extends React.Component {
         <section className="body-container">
           <AppRoute />
         </section>
-        <section className="footer">&copy; 2020 Made by Vijay Mourya.</section>
+        <section className="footer">
+          &copy; 2020 Made by{" "}
+          <a href="mailto:vijaymourya28@gmail.com" style={{ color: "white" }}>
+            Vijay Mourya
+          </a>
+          .
+        </section>
       </>
     );
   }

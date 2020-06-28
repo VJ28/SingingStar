@@ -4,7 +4,7 @@ import styled from "styled-components";
 let Input = styled.input`
   padding: 8px 12px;
   letter-spacing: 1px;
-  margin-top
+  margin-top: 4px;
 `;
 let ErrorBox = styled.div`
   min-height: 16px;
@@ -34,12 +34,18 @@ let FormWrapper = styled.div`
 
 let Submit = styled.div`
   padding: 8px 12px;
-  border: 1px solid teal;
+  border: 1px solid black;
   border-radius: 3px;
-  color: teal;
   width: 80px;
   text-align: center;
   margin-top: 12px;
+`;
+
+let Notice = styled.div`
+  font-size: 13px;
+  color: red;
+  padding: 4px;
+  font-weight: 700;
 `;
 
 class Registration extends React.Component {
@@ -67,6 +73,16 @@ class Registration extends React.Component {
     };
     return errorMsgs;
   };
+
+  componentWillMount() {
+    if (typeof document !== "undefined")
+      document.body.style.backgroundImage = "linear-gradient(#94BEB7, #37B9E9)";
+  }
+
+  componentWillUnmount() {
+    if (typeof document !== "undefined")
+      document.body.style.backgroundImage = null;
+  }
 
   onChangeHandler = (event) => {
     const file = event.target.files[0];
@@ -158,64 +174,70 @@ class Registration extends React.Component {
       fileError,
     } = this.state;
     return (
-      <FormWrapper>
-        <H3>Please submit your entry here!</H3>
-        <InputWrapper>
-          <Label htmlFor="name">Name: &nbsp;</Label>
-          <Input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter your name"
-          />
-          <ErrorBox>{!!nameError ? nameError : null}</ErrorBox>
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="email">Email: &nbsp;</Label>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-          />
-
-          <ErrorBox>{!!emailError ? emailError : null}</ErrorBox>
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="contact">Contact: &nbsp;</Label>
-          <Input
-            id="contact"
-            type="text"
-            name="contact"
-            placeholder="Enter your contact number"
-          />
-
-          <ErrorBox>{!!contactError ? contactError : null}</ErrorBox>
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="city">City: &nbsp;</Label>
-          <Input
-            id="city"
-            type="text"
-            name="city"
-            placeholder="Enter your City"
-          />
-          <ErrorBox>{!!cityError ? cityError : null}</ErrorBox>
-        </InputWrapper>
-        <InputWrapper>
-          <Label htmlFor="file">Upload Audio file: &nbsp;</Label>
-          <div>
-            <input
-              type="file"
-              name="file"
-              id="file"
-              onChange={this.onChangeHandler}
+      <>
+        <Notice>
+          Contest will be live till July 10th, 2020. Winners will be announced
+          on July 12th, 2020.
+        </Notice>
+        <FormWrapper>
+          <H3>Please submit your entry here!</H3>
+          <InputWrapper>
+            <Label htmlFor="name">Name: &nbsp;</Label>
+            <Input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
             />
-          </div>
-          <ErrorBox>{!!fileError ? fileError : null}</ErrorBox>
-        </InputWrapper>
-        <Submit onClick={this.onClickHandler}>Submit</Submit>
-      </FormWrapper>
+            <ErrorBox>{!!nameError ? nameError : null}</ErrorBox>
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="email">Email: &nbsp;</Label>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+
+            <ErrorBox>{!!emailError ? emailError : null}</ErrorBox>
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="contact">Contact: &nbsp;</Label>
+            <Input
+              id="contact"
+              type="text"
+              name="contact"
+              placeholder="Enter your contact number"
+            />
+
+            <ErrorBox>{!!contactError ? contactError : null}</ErrorBox>
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="city">City: &nbsp;</Label>
+            <Input
+              id="city"
+              type="text"
+              name="city"
+              placeholder="Enter your City"
+            />
+            <ErrorBox>{!!cityError ? cityError : null}</ErrorBox>
+          </InputWrapper>
+          <InputWrapper>
+            <Label htmlFor="file">Upload Audio file: &nbsp;</Label>
+            <div>
+              <input
+                type="file"
+                name="file"
+                id="file"
+                onChange={this.onChangeHandler}
+              />
+            </div>
+            <ErrorBox>{!!fileError ? fileError : null}</ErrorBox>
+          </InputWrapper>
+          <Submit onClick={this.onClickHandler}>Submit</Submit>
+        </FormWrapper>
+      </>
     );
   }
 }
