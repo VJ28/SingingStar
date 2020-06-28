@@ -46,6 +46,8 @@ class HomePage extends React.Component {
             We are organizing Online Singing Competition for talented singers
             across Mumbai, India. The platform combines formal judging and
             popular choice to identify and boost the best talent to stardom.
+            Successful participation in a singing competition can be a defining
+            moment in young singer’s career.
           </p>
         </section>
         <section className="section--why-participate">
