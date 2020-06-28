@@ -117,5 +117,11 @@ h2{
     background-size: cover;
 }
 .section--about-us{
-    background-image: linear-gradient(#2BC9DE, #37B9E9);
+    // background-image: linear-gradient(#2BC9DE, #37B9E9);
+    background-image: url("../../assets/img/sangit.jpg");
+    background-size: cover;
+    background-position: right center;
+    h2{
+        color: white;
+    }
 }

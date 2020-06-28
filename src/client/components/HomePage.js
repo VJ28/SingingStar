@@ -16,6 +16,7 @@ const Contact = styled.div`
   font-size: 15px;
   margin-top: 4px;
   & > a {
+    color: white;
     cursor: pointer;
   }
 `;
@@ -24,6 +25,7 @@ const Address = styled.div`
   padding-left: 20px;
   line-height: 1.51;
   padding-bottom: 12px;
+  color: white;
 `;
 
 class HomePage extends React.Component {
@@ -78,7 +80,7 @@ class HomePage extends React.Component {
         <section className="section--about-us">
           <h2>Contact Us</h2>
           <Address>
-            Sangita Patel,
+            Sangita Patel
             <br />
             BKC Mumbai, Maharashtra, India
             <br />
