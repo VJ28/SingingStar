@@ -48,6 +48,19 @@ let Notice = styled.div`
   font-weight: 700;
 `;
 
+let WaitScreen = styled.div`
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 class Registration extends React.Component {
   state = {
     selectedFile: null,
@@ -74,12 +87,12 @@ class Registration extends React.Component {
     return errorMsgs;
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (typeof document !== "undefined")
       document.body.style.backgroundImage = "linear-gradient(#94BEB7, #37B9E9)";
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     if (typeof document !== "undefined")
       document.body.style.backgroundImage = null;
   }
@@ -145,6 +158,9 @@ class Registration extends React.Component {
         data.append("email", email);
         data.append("contact", contact);
         data.append("city", city);
+        this.setState({
+          showWaitScreen: true,
+        });
         fetch(`/upload/?originalFileName=${this.state.selectedFile.name}`, {
           method: "POST",
           cache: "no-cache",
@@ -152,15 +168,22 @@ class Registration extends React.Component {
           redirect: "follow",
           referrer: "no-referrer",
           body: data,
-        }).then((response) => {
-          if (!response.ok) {
-            throw new Error(`${response.status}: ${response.statusText}`);
-          }
-          alert(
-            "Thank you, your application has been submitted. Best of luck!"
-          );
-          window.location.href = "/";
-        });
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`${response.status}: ${response.statusText}`);
+            }
+            alert(
+              "Thank you, your application has been submitted. Best of luck!"
+            );
+            window.location.href = "/";
+          })
+          .catch(() => {
+            alert("Error occured. Please try again later!");
+            this.setState({
+              showWaitScreen: false,
+            });
+          });
       };
       reader.readAsBinaryString(this.state.selectedFile);
     }
@@ -172,6 +195,7 @@ class Registration extends React.Component {
       contactError,
       cityError,
       fileError,
+      showWaitScreen,
     } = this.state;
     return (
       <>
@@ -237,6 +261,7 @@ class Registration extends React.Component {
           </InputWrapper>
           <Submit onClick={this.onClickHandler}>Submit</Submit>
         </FormWrapper>
+        {!showWaitScreen && <WaitScreen>Please Wait...</WaitScreen>}
       </>
     );
   }
